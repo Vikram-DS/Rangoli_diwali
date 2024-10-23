@@ -43,12 +43,31 @@
             cursor: pointer;
             background-color: #f39c12;
             color: white;
+            /* 3D Button effect */
+            box-shadow: 0 5px #999;
+            transition: all 0.3s ease-in-out;
+        }
+        button:active {
+            background-color: #e67e22;
+            box-shadow: 0 2px #666;
+            transform: translateY(4px);
+        }
+        button:hover {
+            background-color: #e67e22;
+            color: #fff;
         }
         #diwaliMessage {
             display: none;
             font-size: 10rem;
             font-weight: bold;
             color: #e67e22;
+        }
+        #votingMessage {
+            display: none;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #d35400;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -66,6 +85,7 @@
     </div>
 
     <div id="diwaliMessage">Happy Diwali!</div>
+    <div id="votingMessage">Happy Diwali to you and please vote for this Rangoli!</div>
 
     <script>
         // Welcome Quotes Array
@@ -83,8 +103,9 @@
         // Happy Diwali Button Functionality
         function happyDiwali() {
             document.body.style.backgroundColor = 'yellow';  // Turn the page yellow
-            document.body.innerHTML = '';  // Clear the entire page content
-            document.body.innerHTML = '<div id="diwaliMessage">Happy Diwali!</div>';  // Show "Happy Diwali" message
+            document.querySelector('#diwaliMessage').style.display = 'block';  // Show "Happy Diwali" message
+            document.querySelector('#votingMessage').style.display = 'block';  // Show voting message
+            document.querySelector('.container').style.display = 'none';  // Hide the initial container
         }
     </script>
 
