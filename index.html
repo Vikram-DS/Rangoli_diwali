@@ -6,7 +6,6 @@
     <title>Diwali Themed Welcome Page</title>
     <style>
         body {
-            background-image: url(); /* Diwali GIF background */
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -58,16 +57,23 @@
         }
         #diwaliMessage {
             display: none;
-            font-size: 10rem;
+            font-size: 15rem;
             font-weight: bold;
             color: #e67e22;
         }
         #votingMessage {
             display: none;
-            font-size: 2.5rem;
+            font-size: 5.5rem;
             font-weight: bold;
             color: #d35400;
             margin-top: 20px;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            margin: 20px auto;
         }
     </style>
 </head>
@@ -85,7 +91,10 @@
     </div>
 
     <div id="diwaliMessage">Happy Diwali!</div>
-    <div id="votingMessage">Happy Diwali to you and please vote for this Rangoli!</div>
+    <div id="votingMessage">
+        <p>Happy Diwali to you and your family!</p>
+        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXc4aXY1MDV3MmQ5a2w5dGt3ZTdxcXppN3I5cGEzZm9iaHlodmI2NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/e8J64RnAp9cAg/giphy.gif" alt="Diwali GIF">
+    </div>
 
     <script>
         // Welcome Quotes Array
@@ -104,7 +113,7 @@
         function happyDiwali() {
             document.body.style.backgroundColor = 'yellow';  // Turn the page yellow
             document.querySelector('#diwaliMessage').style.display = 'block';  // Show "Happy Diwali" message
-            document.querySelector('#votingMessage').style.display = 'block';  // Show voting message
+            document.querySelector('#votingMessage').style.display = 'block';  // Show voting message with GIF
             document.querySelector('.container').style.display = 'none';  // Hide the initial container
         }
     </script>
