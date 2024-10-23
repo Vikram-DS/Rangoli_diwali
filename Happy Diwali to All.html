@@ -6,20 +6,23 @@
     <title>Diwali Themed Welcome Page</title>
     <style>
         body {
-            background-color: #f8e6a9;
+            background-image: url(); /* Diwali GIF background */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             color: #2b2b2b;
             font-family: 'Arial', sans-serif;
             text-align: center;
-            padding: 20px;
+            padding: 50px;
             margin: 0;
-            background-image: url('https://i.imgur.com/N9Vl5TP.png'); /* Diwali rangoli background */
-            background-size: cover;
+            height: 300vh;
         }
         .container {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 15px;
+            background-color: rgba(355, 355, 355, 0.8);
+            padding: 50px;
+            border-radius: 30px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            margin-top: 100px;
         }
         h1 {
             font-size: 3rem;
@@ -32,18 +35,18 @@
             margin: 20px 0;
         }
         button {
-            padding: 10px 20px;
+            padding: 20px 50px;
             font-size: 1.2rem;
-            margin: 10px;
+            margin: 20px;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
             background-color: #f39c12;
             color: white;
         }
         #diwaliMessage {
             display: none;
-            font-size: 3rem;
+            font-size: 10rem;
             font-weight: bold;
             color: #e67e22;
         }
@@ -60,8 +63,6 @@
         <div class="buttons">
             <button onclick="happyDiwali()">Happy Diwali 🎇</button>
         </div>
-
-        <p id="visitorCount">You're visitor number: <span id="visitors">1</span></p>
     </div>
 
     <div id="diwaliMessage">Happy Diwali!</div>
@@ -78,12 +79,6 @@
 
         // Display random quote for each visitor
         document.querySelector('.quote').textContent = quotes[Math.floor(Math.random() * quotes.length)];
-
-        // Visitor count - Save in local storage (basic tracking for demo purposes)
-        let visitorCount = localStorage.getItem('visitorCount') || 0;
-        visitorCount++;
-        localStorage.setItem('visitorCount', visitorCount);
-        document.getElementById('visitors').innerText = visitorCount;
 
         // Happy Diwali Button Functionality
         function happyDiwali() {
