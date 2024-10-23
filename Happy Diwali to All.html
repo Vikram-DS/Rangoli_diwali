@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diwali Themed Welcome Page</title>
+    <style>
+        body {
+            background-color: #f8e6a9;
+            color: #2b2b2b;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            background-image: url('https://i.imgur.com/N9Vl5TP.png'); /* Diwali rangoli background */
+            background-size: cover;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-size: 3rem;
+            color: #e67e22;
+            text-shadow: 2px 2px #7f8c8d;
+        }
+        p.quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #f39c12;
+            color: white;
+        }
+        #diwaliMessage {
+            display: none;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Happy Diwali 🎆</h1>
+        <div class="quote-container">
+            <p class="quote"></p>
+        </div>
+
+        <div class="buttons">
+            <button onclick="happyDiwali()">Happy Diwali 🎇</button>
+        </div>
+
+        <p id="visitorCount">You're visitor number: <span id="visitors">1</span></p>
+    </div>
+
+    <div id="diwaliMessage">Happy Diwali!</div>
+
+    <script>
+        // Welcome Quotes Array
+        const quotes = [
+            "Believe in yourself and all that you are.",
+            "Your only limit is your mind.",
+            "Push yourself, because no one else is going to do it for you.",
+            "Great things never come from comfort zones.",
+            "Don't stop until you're proud."
+        ];
+
+        // Display random quote for each visitor
+        document.querySelector('.quote').textContent = quotes[Math.floor(Math.random() * quotes.length)];
+
+        // Visitor count - Save in local storage (basic tracking for demo purposes)
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        visitorCount++;
+        localStorage.setItem('visitorCount', visitorCount);
+        document.getElementById('visitors').innerText = visitorCount;
+
+        // Happy Diwali Button Functionality
+        function happyDiwali() {
+            document.body.style.backgroundColor = 'yellow';  // Turn the page yellow
+            document.body.innerHTML = '';  // Clear the entire page content
+            document.body.innerHTML = '<div id="diwaliMessage">Happy Diwali!</div>';  // Show "Happy Diwali" message
+        }
+    </script>
+
+</body>
+</html>
